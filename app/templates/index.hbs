@@ -9,7 +9,12 @@
 			Updated {{lastUpdated}}
 		</h6> 
 	</div>
-	{{#view 'map'}} {{/view}}
 </div> 
+	{{#view 'map' 
+		latitudeBinding="model.latitude" 
+		longitudeBinding="model.longitude"}}
+	{{/view}}
+
+
 </center>
 
