@@ -12,13 +12,16 @@ var MapView = Ember.View.extend({
     var options = {
       disableDefaultUI: true,
       center: center,
-      zoom: 8,
+      zoom: 4,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     // create the map
     var map = new google.maps.Map(this.$()[0], options);
     // create the marker
-    var marker = new google.maps.Marker({ position: center, map: map, draggable: false });
+    var marker = new google.maps.Marker({ position: center, 
+        map: map, 
+        animation: google.maps.Animation.DROP,
+        draggable: false });
     // save them both for later use
     this.set("marker", marker);
     this.set("map", map);
