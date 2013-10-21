@@ -1,12 +1,10 @@
-<br><br>
-<div class="container">
-	<div class="jumbotron">
+
 	<center>
-		<h1>
+		<h1 style="font-family: 'Oswald', sans-serif; font-weight: bold; font-size: 64px;">
 			{{model.city}}
 		</h1>
 		<br>
-		<div style="width:504px;height:204px;border:2px solid blue;">
+		<div style="width:500px;height:200px;border:3px solid black; border-radius: 3px; ">
 			{{#view 'map' 
 				latitudeBinding="model.latitude" 
 				longitudeBinding="model.longitude"}}
@@ -16,6 +14,5 @@
 			Updated {{lastUpdated}}
 		</h6> 
 	</center>
-	</div>
-</div> 
+ 
 
