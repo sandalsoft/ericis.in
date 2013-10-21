@@ -1,15 +1,18 @@
 
 	<center>
-		<h1 style="font-family: 'Oswald', sans-serif; font-weight: bold; font-size: 64px;">
+		<h1 style="font-family: 'Driod Serif', serif; font-weight: 900; font-size: 76px;">
 			{{model.city}}
 		</h1>
+		<h3 style="font-family: 'Lato', sans-serif; font-weight: 300; font-size: 18px;">
+			Until {{nextTripDate}} when I go {{nextCity}}
+		</h3>	
 		<br>
-		<div style="width:500px;height:200px;border:3px solid black; border-radius: 3px; ">
+		<div style="width:500px;height:200px;border:2px solid black; border-radius: 2px; ">
 			{{#view 'map' 
-				latitudeBinding="model.latitude" 
+				latitudeBinding="model.latitude"  
 				longitudeBinding="model.longitude"}}
 			{{/view}}
-		</div>
+		</div> 
 		<h6>
 			Updated {{lastUpdated}}
 		</h6> 

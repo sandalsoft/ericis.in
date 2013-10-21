@@ -2,8 +2,6 @@ var MapView = Ember.View.extend({
   didInsertElement: function() {
     var lat = this.get("latitude");
     var lon = this.get("longitude");
-    console.log('lat: ' + lat);
-    console.log('lon: ' + lon);
     // this is required for the map to be rendered
     this.$().css({ width: "500px", height: "200px" });
     // create the LatLng object that will be used to center both the map and the marker
