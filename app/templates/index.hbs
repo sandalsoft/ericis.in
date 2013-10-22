@@ -1,10 +1,10 @@
 
 	<center>
 		<font style="font-family: 'Driod Serif', serif; font-weight: 900; font-size: 76px;">
-			{{model.city}}
+			 <a  {{action setMarkerToCity model.current_latitude model.current_longitude}}>{{city}}</a>
 		</font> 
-		<h3 style="font-family: 'Lato', sans-serif; font-weight: 300; font-size: 18px;">Until {{nextTripDate}} when I fly {{toNextCity}} <a class="nextcity" {{action setNextCity target="controller"}}>{{nextCity}}</a></h3>	
-		<br>
+		<h3 style="font-family: 'Lato', sans-serif; font-weight: 300; font-size: 18px;">Until {{nextTripDate}} when I fly {{toNextCity}} <a class="nextcity" {{action setMarkerToCity model.next_latitude model.next_longitude}}>{{nextCity}}</a></h3>	
+		<br> 
 		<div style="width:600px;height:300px;border:2px solid black; border-radius: 2px; ">
 			{{#view 'map' 
 				latitudeBinding="model.latitude"  
