@@ -1,13 +1,11 @@
 
 	<center>
-		<h1 style="font-family: 'Driod Serif', serif; font-weight: 900; font-size: 76px;">
+		<font style="font-family: 'Driod Serif', serif; font-weight: 900; font-size: 76px;">
 			{{model.city}}
-		</h1>
-		<h3 style="font-family: 'Lato', sans-serif; font-weight: 300; font-size: 18px;">
-			Until {{nextTripDate}} when I go {{nextCity}}
-		</h3>	
+		</font> 
+		<h3 style="font-family: 'Lato', sans-serif; font-weight: 300; font-size: 18px;">Until {{nextTripDate}} when I fly {{toNextCity}} <a class="nextcity" {{action setNextCity target="controller"}}>{{nextCity}}</a></h3>	
 		<br>
-		<div style="width:500px;height:200px;border:2px solid black; border-radius: 2px; ">
+		<div style="width:600px;height:300px;border:2px solid black; border-radius: 2px; ">
 			{{#view 'map' 
 				latitudeBinding="model.latitude"  
 				longitudeBinding="model.longitude"}}

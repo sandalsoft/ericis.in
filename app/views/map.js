@@ -1,9 +1,12 @@
 var MapView = Ember.View.extend({
-  didInsertElement: function() {
+  didInsertElement: function(latitude, longitude) {
+    // var lat = latitude; //this.get("latitude");
+    // var lon = longitude; //this.get("longitude");
     var lat = this.get("latitude");
     var lon = this.get("longitude");
+
     // this is required for the map to be rendered
-    this.$().css({ width: "500px", height: "200px" });
+    this.$().css({ width: "600px", height: "300px" });
     // create the LatLng object that will be used to center both the map and the marker
     var center = new google.maps.LatLng(lat,lon);
     // some options
@@ -13,6 +16,10 @@ var MapView = Ember.View.extend({
       zoom: 4,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+
+    google.maps.visualRefresh = true;
+
+
     // create the map
     var map = new google.maps.Map(this.$()[0], options);
     // create the marker
@@ -49,8 +56,10 @@ var MapView = Ember.View.extend({
     var position = new google.maps.LatLng(this.get("latitude"), this.get("longitude"));
     // only center the map when the position has been changed by changing the textfields
     if (!this.get("dragging")) { this.get("map").setCenter(position); }
+
     // update the position of the marker
     this.get("marker").setPosition(position);
+    this.get("map").panTo(position);
   }.observes("latitude", "longitude")
 });
 

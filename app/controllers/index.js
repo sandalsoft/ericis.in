@@ -15,9 +15,25 @@ var IndexController = Em.ObjectController.extend({
 			return "home";
 		}
 		else {
-			return "to " + next_city;
+			return next_city;
 		}
-	}.property()
+	}.property(),
+
+	toNextCity: function() {
+		var next_city = this.get('model.next_city');
+		if (next_city === 'Chicago, IL') {
+			return "";
+		}
+		else {
+			return "to ";
+		}
+	}.property(),
+
+
+	setNextCity: function() {
+		this.set('latitude', this.get('next_latitude'));
+		this.set('longitude', this.get('next_longitude'));
+	}
 });
 
 export default IndexController;

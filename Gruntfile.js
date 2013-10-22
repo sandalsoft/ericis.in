@@ -149,5 +149,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server:dist', "Build and preview production (minified) assets.",
                      ['build:dist', 'connect:dist:keepalive']);
 
+  grunt.registerTask('deploy:prod', "Copy production app to sandalsoft.com.",
+                      'deploy:prod');
   grunt.initConfig(config);
 };

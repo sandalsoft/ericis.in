@@ -10,7 +10,8 @@ var taskRequirements = {
   'less': ['grunt-contrib-less'],
   'stylus': ['grunt-contrib-stylus'],
   'emberTemplates': ['grunt-ember-templates'],
-  'emblem': ['grunt-emblem']
+  'emblem': ['grunt-emblem'],
+  'shell': ['grunt-shell']
 };
 
 Helpers.filterAvailableTasks = function(tasks){
