@@ -6,7 +6,8 @@ var IndexController = Em.ObjectController.extend({
 
     nextTripDate: function() {
         var next_trip_epoch = this.get('model.next_start_date');
-        return moment.unix(next_trip_epoch).format('MMMM Do');
+        console.log("tits: " + moment.unix(next_trip_epoch).utc().format('MMMM Do'))
+        return moment.unix(next_trip_epoch).utc().format('MMMM Do');
     }.property(),
 
     nextCity: function() {
